@@ -1,15 +1,17 @@
 
-
 import java.io.File;
 import java.util.Scanner;
 
 public class MVC {
     public static void main(String[] args) {
 
-        File Key = new File("Key.txt");
+     int message = 56;
+     int key = 12;
+     int crypt = message|key;
 
-        System.out.println(Key);
+     int cribt = message^key;
 
-        
+     System.out.println(Integer.toBinaryString(crypt));
+        System.out.println(Integer.toBinaryString(cribt));
     }
 }
