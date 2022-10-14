@@ -1,6 +1,10 @@
+package MVCcrypt;
 
 import java.io.File;
 import java.util.Scanner;
+import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class MVC {
     public static void main(String[] args) {

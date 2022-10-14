@@ -1,12 +1,14 @@
+package MVCcrypt;
+
 public class Model {
     public static void main(String[] args) {
-        String m = "Dubbel";
-        String k = "Pipa";
+        String message = "Dubbel";
+        String key = "Pipa";
 
         Model cryptModel = new Model();
         //System.out.println((char)cryptModel.crypt(m,k));
-        System.out.println(cryptModel.cryptString(m,k));
-        System.out.println(cryptModel.binärString(m,k));
+        System.out.println(cryptModel.cryptString(message,key));
+        System.out.println(cryptModel.binärString(message,key));
     }
 
     public String cryptString(String message, String key) {
@@ -38,6 +40,6 @@ public class Model {
     }
 
     public String expandKey(String s){
-            return s+s;
+        return s+s;
     }
 }
