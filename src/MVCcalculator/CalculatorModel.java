@@ -3,22 +3,24 @@ package MVCcalculator;
 public class CalculatorModel {
 
     int Value;
-    String message = "Trippel";
-    String key = "Rör";
+    String message;
+    String key;
 
-    public void CryptMessageKey(String message, String key) {
+    public int CryptMessageKey() {
         for (int i = 0 ; i < message.length() ; i++) {
             Value += crypt(message.charAt(i), key.charAt(i));
         }
+        return 0;
     }
 
-    public String getValue(int message, int key) {
+    public int getValue() {
         return Value;
     }
 
     public static void main(String[] args) {
         CalculatorModel model = new CalculatorModel();
-        model.CryptMessageKey(model.message, model.key);
+        System.out.println(model.CryptMessageKey());
+        model.CryptMessageKey();
         System.out.println(model.getValue());
     }
     public int crypt(int m, int k) {
