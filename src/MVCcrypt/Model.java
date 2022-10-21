@@ -1,17 +1,19 @@
 package MVCcrypt;
 
 public class Model {
-    public static void main(String[] args) {
+
         String message = "Dubbel";
         String key = "Pipa";
 
-        Model cryptModel = new Model();
-        //System.out.println((char)cryptModel.crypt(m,k));
-        System.out.println(cryptModel.cryptString(message,key));
-        System.out.println(cryptModel.binärString(message,key));
-    }
 
-    public String cryptString(String message, String key) {
+        public void setMessage(String message) {
+            this.message = message;
+        }
+        public void setKey(String key) {
+            this.key = key;
+        }
+
+    public String cryptString() {
         String resultat = "";
 
         while (key.length() < message.length()) {
@@ -23,7 +25,7 @@ public class Model {
         return resultat;
     }
 
-    public String binärString(String message, String key) {
+    public String binärString() {
         String binärt = "";
 
         while (key.length() < message.length()) {
@@ -39,7 +41,14 @@ public class Model {
         return m^k;
     }
 
-    public String expandKey(String s){
-        return s+s;
+    public String expandKey(String s) {
+        return s + s;
+
+
+    }
+    public static void main(String[] args) {
+        Model cryptModel = new Model();
+        System.out.println(cryptModel.cryptString());
+        System.out.println(cryptModel.binärString());
     }
 }

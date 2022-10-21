@@ -1,10 +1,11 @@
 package MVCcalculator;
 
-public class CalculatorModel {
 
-    int Value;
-    String message;
-    String key;
+    public class CalculatorModel {
+        private int Value;
+
+        String message;
+        String key;
 
     public int CryptMessageKey() {
         for (int i = 0 ; i < message.length() ; i++) {
@@ -17,7 +18,7 @@ public class CalculatorModel {
         return Value;
     }
 
-    public static void main(String[] args) {
+    public void main(String[] args) {
         CalculatorModel model = new CalculatorModel();
         System.out.println(model.CryptMessageKey());
         model.CryptMessageKey();

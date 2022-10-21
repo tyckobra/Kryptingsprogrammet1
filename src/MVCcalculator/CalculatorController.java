@@ -10,21 +10,19 @@ public class CalculatorController {
     public CalculatorController(CalculatorView View, CalculatorModel Model) {
         this.View = View;
         this.Model = Model;
-        // Tell the View that when ever the calculate button
-        // is clicked to execute the actionPerformed method
-        // in the CalculateListener inner class
+
         this.View.addCalculateListener(new CalculateListener());
     }
 
     private class CalculateListener implements ActionListener{
         public void actionPerformed(ActionEvent e) {
-            int firstNumber, secondNumber = 0;
+            int message, key = 0;
 
             try{
-                firstNumber = View.getFirstNumber();
-                secondNumber = View.getSecondNumber();
-                Model.CryptMessageKey(firstNumber, secondNumber);
-                View.setCalcSolution(Model.getCalculationValue());
+                message = View.getFirstNumber();
+                key = View.getSecondNumber();
+                Model.CryptMessageKey(message, key);
+                View.setCalcSolution(Model.getValue());
             }
             catch(NumberFormatException ex){
                 System.out.println(ex);
